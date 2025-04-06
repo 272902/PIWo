@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sklep z książkami</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+			<h1>Książkarnia</h1>
+				<div class="actions">
+					<button>Zaloguj</button>
+					<button>Koszyk</button>
+				</div>
+		</header>
+
+		<div class="book-list" id="bookList">
+			<h2>Dostępne książki</h2>
+			<div class="book">
+				<h3>Wiedźmin</h3>
+				<p><b>Autor:</b> A. Sapkowski</p>
+				<p><b>Cena:</b> 50 zł</p>
+				<p><b>Okładka:</b> Twarda</p>
+				<p>Saga o wiedźminie i jego przygodach.</p>
+			</div>
+			<div class="book">
+				<h3>Lalka</h3>
+				<p><b>Autor:</b> B. Prus</p>
+				<p><b>Cena:</b> 35 zł</p>
+				<p><b>Okładka:</b> Miękka</p>
+				<p>Powieść o Warszawie i losach Wokulskiego.</p>
+			</div>
+		</div>
+		
+		<button>Dodaj nową książkę</button>
+		
+		<div class="container">
+			<div class="filters">
+				<h2>Filtry</h2>
+				<input type="text" id="search" placeholder="Szukaj po autorze, tytule, opisie lub słowie">
+				<label>Cena max:
+					<input type="number" id="priceFilter">
+				</label>
+				<label>Okładka:
+					<select id="coverFilter">
+						<option value="">Dowolna</option>
+						<option value="miękka">Miękka</option>
+						<option value="twarda">Twarda</option>
+					</select>
+				</label>
+			</div>
+	    </div>
+	</body>
+</html>

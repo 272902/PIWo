@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sklep z książkami</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+			<h1>Książkarnia</h1>
+				<div class="actions">
+					<button>Zaloguj</button>
+					<button>Koszyk</button>
+				</div>
+		</header>
+		
+		<div class="container">
+			<h2>Dodawanie książki</h2>
+			<label>Tytuł ksiązki:
+			<input type="text" id="addTitle">
+			</label>
+			<label>Autor:
+			<input type="text" id="addAuthor">
+			</label>
+			<label>Cena:
+			<input type="number" id="addPrice">
+			</label>
+			<label>Okładka:
+			<select id="addCover">
+			  <option value="miękka">Miękka</option>
+			  <option value="twarda">Twarda</option>
+			</select>
+			</label>
+			<label>Opis:
+			<input type="text" id="addDescription">
+			</label>
+		</div>
+		
+		<button>Zaakceptuj</button>
+		
+	</body>
+</html>
