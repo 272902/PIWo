@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #F6416C, #fff6b7);
+  padding: 10px;
+}
+
+.todo-list {
+  width: 100%;
+  max-width: 540px;
+  background: #f7eede;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e5dccb;
+  border-radius: 30px;
+  padding-left: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #d6cbb6;
+  color: #22201d;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+ul li{
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 40px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before{
+  content: '☐';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+ul li.checked .task-text {
+  color: #807d7a;
+  text-decoration: line-through;
+}
+
+ul li.checked::before{
+  content: '☑';
+}
+
+ul li span{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 5px;
+  right: 5px;
+  font-size: 22px;
+  color: #807d7a;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+ul li span:hover{
+  background: #e5dccb;
+  border-radius: 12px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+}
+
+#modalText {
+  margin-bottom: 20px;
+}
+
+.completion-date {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+  text-align: left;
+}
+
+.task-text {
+  display: block;
+  margin-bottom: 5px;
+}
+
+ul li.checked .completion-date {
+  text-decoration: none !important;
+  color: #888;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 8px;
+  display: block;
+}

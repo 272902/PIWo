@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		<title>To-Do List</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="todo-list">
+				<h2>To-Do List</h2>
+				<div class="row">
+					<input type="text" id="input-box" placeholder="Dodaj treść">
+					<button onclick="AddTask()">Dodaj</button>
+				</div>
+				<ul id="list-container">
+					<!-- <li class="checked">Task 1</li>
+					<li>Task 2</li>
+					<li>Task 3</li> -->
+				</ul>
+			</div>
+		</div>
+
+		<div id="confirmModal" class="modal">
+			<div class="modal-content">
+				<p id="modalText"></p>
+				<button id="confirmBtn">Tak</button>
+				<button id="cancelBtn">Nie</button>
+			</div>
+		</div>
+	</body>
+	<script src="script.js"></script>
+</html>
