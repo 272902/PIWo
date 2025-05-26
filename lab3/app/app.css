@@ -1,0 +1,273 @@
+/* @import "tailwindcss"; */
+
+/* @theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+} */
+
+/* html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+} */
+* {
+  font-size: medium;
+  color: #414141;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(0.25turn, rgb(4, 4, 82), rgb(2, 2, 92));
+}
+
+.new-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.new-book-form input,
+.new-book-form select,
+.new-book-form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.new-book-form button {
+  background-color: #5e4caf;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.new-book-form button:hover {
+  background-color: #9145a0;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.book-item {
+  border-radius: 5px;
+  background: linear-gradient(0.75turn, rgb(233, 107, 201), rgb(0, 174, 255));
+  padding: 10px;
+  cursor: pointer;
+}
+
+.book-item:hover {
+  transform: scale(1.01);
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(0.25turn, darkblue, indigo);
+}
+
+nav a {
+  text-decoration: none;
+  color: gold;
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  width: 0;
+  height: 3px;
+  background: gold;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after,
+nav .active::after {
+  width: 100%;
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  max-height: 30px;
+  background: linear-gradient(0.25turn, darkblue, indigo);
+  padding: 10px;
+}
+
+footer a {
+  color: gold;
+  font-size: small;
+}
+
+.center {
+  color: #e3e2ec;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+}
+
+.center2 {
+  color: #a19fb8;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+}
+
+
+.list-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.email {
+  color: gold;
+  text-decoration: none;
+  cursor: help;
+}
+
+main {
+  margin-left: 15%;
+  width: 70%;
+  margin-bottom: 32px;
+}
+
+article {
+  border-radius: 5px;
+  background: linear-gradient(0.75turn, rgb(233, 107, 201), rgb(0, 174, 255));
+  padding: 2px;
+  cursor: pointer;
+}
+
+article.done {
+  filter: grayscale(100%);
+}
+
+small {
+  color: #e3e2ec;
+  font-size: medium;
+  font-style: italic;
+}
+
+strong {
+  color: #e3e2ec;
+  font-size: x-large;
+}
+
+input {
+  padding: 1px;
+  border: 2px solid silver;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+input:focus {
+  border-color: royalblue;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+form {
+  border: 2px solid gold;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+button {
+  background-color: #7f00ff;
+  padding: 2px;
+  color: gold;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #9021ff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+aside {
+  justify-content: space-evenly !important;
+}
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  max-width: fit-content;
+  cursor: pointer;
+  padding: 1px;
+}
+
+input[type="radio"]:checked,
+input[type="radio"]:hover {
+  border-color: gold;
+  box-shadow: 0 0 10px gold;
+  background-color: rgba(255, 248, 220, 0.5);
+}
+
+input[type="radio"]::before {
+  content: attr(icon);
+  font-size: x-large;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-left: 5%;
+    width: 90%;
+    margin-bottom: 32px;
+  }
+}
