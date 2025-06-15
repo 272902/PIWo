@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../app.css";
-import { Auth } from "../Components/auth";
+import { Auth } from "../Components/Auth";
 
 export function meta() {
   return [

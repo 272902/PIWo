@@ -271,3 +271,16 @@ input[type="radio"]::before {
     margin-bottom: 32px;
   }
 }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 100px;
+  z-index: 1;
+  text-align: center;
+}
+
+.dropdown-container {
+  position: realtive;
+  display: inline-block;
+}

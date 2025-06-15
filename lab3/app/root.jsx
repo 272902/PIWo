@@ -11,6 +11,7 @@ import stylesheet from "./app.css?url";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { BooksProvider } from "./Components/BooksContext";
+import { BasketProvider } from "./Contexts/BasketReducerContext";
 
 export const links = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -36,9 +37,11 @@ export function Layout({ children }) {
         <Links />
       </head>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <BasketProvider>
+          <Header />
+          {children}
+          <Footer />
+        </BasketProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

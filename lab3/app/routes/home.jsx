@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { use, useState, useContext } from "react";
 import { useBooks } from "../Components/BooksContext";
 import "../app.css";
 import { auth } from "../config/firebase";
+import BasketContext from "../Contexts/BasketReducerContext";
 
 export function meta() {
   return [
@@ -16,12 +17,22 @@ export default function Home() {
   const [filter, setFilter] = useState("Wszystkie");
   const [onlyMine, setOnlyMine] = useState(false);
 
-const filteredBooks = books.filter((book) => {
-  const matchesSearch = book.title.toLowerCase().includes(search.toLowerCase()) || book.author.toLowerCase().includes(search.toLowerCase());
-  const matchesFilter = filter === "Wszystkie" || book.category === filter;
-  const matchesUser = !onlyMine || book.userId === auth.currentUser?.uid;
-  return matchesSearch && matchesFilter && matchesUser;
-});
+  const { dispatch } = useContext(BasketContext);
+
+  const handleBasket = (book) => {
+    dispatch({ type: "ADD_ITEM", payload: book });
+  };
+
+  const handleRemove = (book) => {
+        dispatch({ type: "REMOVE_ITEM", payload: book });
+    };
+
+  const filteredBooks = books.filter((book) => {
+    const matchesSearch = book.title.toLowerCase().includes(search.toLowerCase()) || book.author.toLowerCase().includes(search.toLowerCase());
+    const matchesFilter = filter === "Wszystkie" || book.category === filter;
+    const matchesUser = !onlyMine || book.userId === auth.currentUser?.uid;
+    return matchesSearch && matchesFilter && matchesUser;
+  });
 
   return (
     <main>
@@ -72,6 +83,7 @@ const filteredBooks = books.filter((book) => {
               <div className="book-buttons">
                 <button>Edytuj</button>
                 <button onClick={() => removeBook(book.id)}>Usuń</button>
+                <button onClick={() => handleBasket(book)}>🧺</button>
               </div>
             </div>
           </article>
